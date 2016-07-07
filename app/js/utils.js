@@ -109,7 +109,12 @@ function getProductList() {
     },{
       name: 'OLI 2',
       text: 'Great product over 9000 out 10'
-    }]
+    }],
+    pictures: [
+      '../assets/images/products/product-1.jpg',
+      '../assets/images/products/product-2.jpg',
+      '../assets/images/products/product-3.jpg'
+    ]
   },{
     picture: '../assets/images/products/product-2.jpg',
     name: 'Amazing Product',
@@ -132,7 +137,12 @@ function getProductList() {
     },{
       name: 'OLI 2',
       text: 'Great product over 9000 out 10'
-    }]
+    }],
+    pictures: [
+      '../assets/images/products/product-1.jpg',
+      '../assets/images/products/product-2.jpg',
+      '../assets/images/products/product-3.jpg'
+    ]
   },{
     picture: '../assets/images/products/product-3.jpg',
     name: 'New product',
