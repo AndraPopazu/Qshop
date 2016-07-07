@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded',function(){
     var templateProduct = `<div class="product">
         <a href="#" class="add-to-card">Add to cart</a>
         __ONSALE__
-        <a href ="product.html">
+        <a href ="product.html?id=__ID__">
             <img src="__PICTURE__">
         </a>
 
@@ -24,7 +24,8 @@ document.addEventListener('DOMContentLoaded',function(){
       div.className = 'col-xs-12 col-sm-6 col-md-3 product-box';
       var productHTML = templateProduct.replace('__NAME__', products[i].name)
                                        .replace('__PRICE__', products[i].price)
-                                       .replace('__PICTURE__', products[i].picture);
+                                       .replace('__PICTURE__', products[i].picture)
+                                       .replace('__ID__',i);
       //is the product on Sale?
       var onSaleString = products[i].onSale ? onSaleTemplate : '';
       productHTML = productHTML.replace('__ONSALE__', onSaleString);
