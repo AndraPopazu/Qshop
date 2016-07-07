@@ -73,7 +73,7 @@ function requireFields(form, inputs) {
  *
  * @param  {DOMNode} node      The node to start the search form
  * @param  {String} className The class we want to find being used
- * @return {DOMNode|null}      Return the found node or null 
+ * @return {DOMNode|null}      Return the found node or null
  */
 function findParentWithClass(node,className) {
   if(!node) {
@@ -84,4 +84,23 @@ function findParentWithClass(node,className) {
   } else {
     return findParentWithClass(node.parentNode,className);
   }
+}
+
+function getProductList() {
+  return [{
+    picture: '../assets/images/products/product-1.jpg',
+    name: 'Limited Price',
+    price: 299,
+    onSale: true
+  },{
+    picture: '../assets/images/products/product-2.jpg',
+    name: 'Amazing Product',
+    price: 299,
+    onSale: false
+  },{
+    picture: '../assets/images/products/product-3.jpg',
+    name: 'New product',
+    price: 299,
+    onSale: false
+  }]
 }
