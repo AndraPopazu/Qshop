@@ -13,7 +13,7 @@ function onchangeElem(inputId) {
  * @param  {String} inputId The id of the input we show the error
  */
 function showError(inputId) {
-  var parentNode =  document.querySelector(inputId).parentNode;
+  var parentNode =  findParentWithClass(document.querySelector(inputId),'form-group');
   parentNode.className +=  ' has-error';
   parentNode.querySelector('.help-block').className = parentNode.querySelector('.help-block').className.replace('hidden','');
 }
@@ -24,7 +24,7 @@ function showError(inputId) {
  * @param  {String} inputId The id of the input we show the error
  */
 function hideError(inputId) {
-  var parentNode =  document.querySelector(inputId).parentNode;
+  var parentNode =  findParentWithClass(document.querySelector(inputId),'form-group');
   parentNode.className = parentNode.className.replace('has-error','');
 
   parentNode.querySelector('.help-block').className = parentNode.querySelector('.help-block').className.replace('hidden','');
@@ -66,4 +66,22 @@ function requireFields(form, inputs) {
         event.preventDefault();
       }
   })
+}
+
+/**
+ * findParentWithClass - Find the closest parent that has a the given className used
+ *
+ * @param  {DOMNode} node      The node to start the search form
+ * @param  {String} className The class we want to find being used
+ * @return {DOMNode|null}      Return the found node or null 
+ */
+function findParentWithClass(node,className) {
+  if(!node) {
+    return null;
+  }
+  if(node.parentNode.className.indexOf(className) !== -1) {
+    return node.parentNode;
+  } else {
+    return findParentWithClass(node.parentNode,className);
+  }
 }
