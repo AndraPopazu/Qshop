@@ -168,3 +168,22 @@ function getParameterByName(name) {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
+
+
+function addToCart(id,qty, name) {
+  var cart = localStorage.cart ? JSON.parse(localStorage.cart) : [];
+  for(var i=0;i<cart.length;i++) {
+    if(cart[i].id == id) {
+      cart[i].qty = parseInt(cart[i].qty);
+      cart[i].qty += parseInt(qty);
+      localStorage.cart = JSON.stringify(cart);
+      return;
+    }
+  }
+  cart.push({
+    id: id,
+    qty: qty,
+    name: name
+  })
+  localStorage.cart = JSON.stringify(cart);
+}

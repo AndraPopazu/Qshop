@@ -39,4 +39,8 @@ document.addEventListener('DOMContentLoaded',function(){
     for(var i=0;i<product.specifications.length;i++) {
       specContainer.innerHTML += '<th>' + product.specifications[i].label+'</th><td>' + product.specifications[i].value + '<td/>';
     }
+
+    document.querySelector("#addToCart").addEventListener('click', function() {
+      addToCart(getParameterByName('id'), document.querySelector("#qty").value, product.name);
+    })
 })
