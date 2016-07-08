@@ -9,6 +9,8 @@
     <link rel="stylesheet" type="text/css" href="cart.css">
     <script src="../assets/js/jquery-2.1.4.js"></script>
     <script src="../assets/bootstrap/js/bootstrap.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="./cart.js"></script>
 </head>
 <body id="top">
 <!-- Header -->
@@ -51,86 +53,18 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr class="cart-item">
-                            <td class="product-image">
-                                <a href="#">
-                                    <img src="../assets/images/products/product-1.jpg"/>
-                                </a>
-                            </td>
-                            <td class="product-name">
-                                <a href="#">Photo</a>
-                            </td>
-                            <td class="product-price">
-                                <a href="#">$150</a>
-                            </td>
-                            <td class="product-quantity">
-                                <div class="quantity">
-                                    <input type="button" class="minus" value="-">
-                                    <input type="number" class="input-text qty text" title="Qty" value="1"
-                                           name="quantity">
-                                    <input type="button" class="plus" value="+">
-                                </div>
-                            </td>
-                            <td class="product-total">
-                                <a href="#">$150</a>
-                            </td>
-                        </tr>
-                        <tr class="cart-item">
-                            <td class="product-image">
-                                <a href="#">
-                                    <img src="../assets/images/products/product-2.jpg"/>
-                                </a>
-                            </td>
-                            <td class="product-name">
-                                <a href="#">Painting</a>
-                            </td>
-                            <td class="product-price">
-                                <a href="#">$100</a>
-                            </td>
-                            <td class="quantity">
-                                <div class="quantity">
-                                    <input type="button" class="minus" value="-">
-                                    <input type="number" class="input-text qty text" title="Qty" value="2"
-                                           name="quantity">
-                                    <input type="button" class="plus" value="+">
-                                </div>
-                            </td>
-                            <td class="product-total">
-                                <a href="#">$200</a>
-                            </td>
-                        </tr>
-                        <tr class="cart-item">
-                            <td class="product-image">
-                                <a href="#">
-                                    <img src="../assets/images/products/product-6.jpg"/>
-                                </a>
-                            </td>
-                            <td class="product-name">
-                                <a href="#">Illustration</a>
-                            </td>
-                            <td class="product-price">
-                                <a href="#">$30</a>
-                            </td>
-                            <td class="quantity">
-                                <div class="quantity">
-                                    <input type="button" class="minus" value="-">
-                                    <input type="number" class="input-text qty text" title="Qty" value="1"
-                                           name="quantity">
-                                    <input type="button" class="plus" value="+">
-                                </div>
-                            </td>
-                            <td class="product-total">
-                                <a href="#">$300</a>
-                            </td>
-                        </tr>
-                        <tr class="cart-actions">
-                            <td colspan="6">
-                                <div class="update-buttons">
-                                    <button class="btn btn-default btn-orange">Update Cart</button>
-                                </div>
-                            </td>
-                        </tr>
+
+
                         </tbody>
+                        <tfoot>
+                          <tr class="cart-actions">
+                              <td colspan="6">
+                                  <div class="update-buttons">
+                                      <button class="btn btn-default btn-orange">Update Cart</button>
+                                  </div>
+                              </td>
+                          </tr>
+                        </tfoot>
                     </table>
                 </form>
             </div>
@@ -179,15 +113,15 @@
                 <h3>Cart Total</h3>
                 <table class="table table-responsive cart-totals">
                     <tbody>
-                        <tr class="card-subtotal">
+                        <tr class="cart-subtotal">
                             <th>Cart Subtotal</th>
                             <td>$650</td>
                         </tr>
-                        <tr class="card-shipping">
+                        <tr class="cart-shipping">
                             <th>Shipping</th>
                             <td>Free</td>
                         </tr>
-                        <tr class="card-total">
+                        <tr class="cart-total">
                             <th>Order Total</th>
                             <td class="price">$650</td>
                         </tr>
